@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELLA | FASHION BOUTIQUE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: #e1afba;">
+
+    <h1>SELLA | FASHION BOUTIQUE</h1>
+    <hr class="line">
+    <p class="para1"><em>selling trendy fashion with love</em></p>
+    <br>
+
+    <!-- أزرار الأقسام (تغيير التصنيفات) -->
+    <div class="category-buttons">
+        <button class="cat-btn active" onclick="filterProducts('all')">ALL</button>
+        <button class="cat-btn" onclick="filterProducts('dresses')">DRESSES</button>
+        <button class="cat-btn" onclick="filterProducts('shirts')">SHIRTS</button>
+        <button class="cat-btn" onclick="filterProducts('pants')">PANTS</button>
+    </div>
+
+    <!-- شبكة المنتجات (كل سطر فيه زوج تصاور بفضل CSS Grid) -->
+    <div class="products-grid" id="productsGrid">
+
+        <!-- فستان 1 -->
+        <div class="product-card" data-category="dresses" onclick="openOrder( '2400')">
+            <img src="dress1.jpg" alt="Dress">
+            <div class="prod-info">
+
+                <p class="price">2500 DA</p>
+                <button class="btn">Order Now</button>
+            </div>
+        </div>
+
+        <!-- فستان 2 -->
+        <div class="product-card" data-category="dresses" onclick="openOrder( '2500 ')">
+            <img src="dress2.jpg" alt="Dress">
+            <div class="prod-info">
+
+                <p class="price">2200 DA</p>
+                <button class="btn">Order Now</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="dresses" onclick="openOrder( '2500')">
+            <img src="dress4.jpg" alt="Dress">
+            <div class="prod-info">
+
+                <p class="price">2500 DA</p>
+                <button class="btn">Order Now</button>
+            </div>
+        </div>
+
+        <!-- قميص 1 -->
+        <div class="product-card" data-category="shirts" onclick="openOrder( '1800')">
+            <img src="shirt1.jpg" alt="Shirt">
+            <div class="prod-info">
+
+                <p class="price">1800 DA</p>
+                <button class="btn">Order Now</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="shirts" onclick="openOrder( '1700')">
+            <img src="shirt3.jpg" alt="Shirt">
+            <div class="prod-info">
+
+                <p class="price">1700 DA</p>
+                <button class="btn">Order Now</button>
+            </div>
+        </div>
+
+        <!-- سروال 1 -->
+        <div class="product-card" data-category="pants" onclick="openOrder( '3000')">
+            <img src="pant1.jpg" alt="Pants">
+            <div class="prod-info">
+
+                <p class="price">3000 DA</p>
+                <button class="btn">Order Now</button>
+            </div>
+        </div>
+
+
+        <div class="product-card" data-category="pants" onclick="openOrder( '2000')">
+            <img src="pant2.jpg" alt="Pants">
+            <div class="prod-info">
+
+                <p class="price">2000 DA</p>
+                <button class="btn">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة الطلب (تفتح كي تلضي على أي برودكت) -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeOrder()">&times;</span>
+            <h2>COMPLETE YOUR ORDER</h2>
+            <hr class="line">
+
+
+            <div id="modalBasePrice" class="pro-price"></div>
+
+            <form id="orderForm" onsubmit="submitOrder(event)">
+
+                <!-- الألوان -->
+                <div class="form-group">
+                    <label>Color:</label><br>
+                    <label><input type="radio" name="color" value="red" required> Red</label>
+                    <label><input type="radio" name="color" value="blue"> Blue</label>
+                </div>
+
+                <!-- المقاسات -->
+                <div class="form-group">
+                    <label>Size:</label><br>
+                    <label><input type="radio" name="size" value="S" required> S</label>
+                    <label><input type="radio" name="size" value="M"> M</label>
+                    <label><input type="radio" name="size" value="L"> L</label>
+                    <label><input type="radio" name="size" value="XL"> XL</label>
+                </div>
+
+                <!-- المعلومات الشخصية -->
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="fullname" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="number" placeholder="Enter your number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Wilaya</label>
+                    <select id="wilaya" onchange="calculateTotal()">
+                        <option value="batna">Batna</option>
+                        <option value="biskra">Biskra</option>
+                        <option value="setif">Setif</option>
+                        <option value="oran">Oran</option>
+                        <option value="algiers">Algiers</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Delivery Type</label>
+                    <select id="delivery" onchange="calculateTotal()">
+                        <option value="home">Home Delivery</option>
+                        <option value="office">Office Delivery</option>
+                    </select>
+                </div>
+
+                <div class="delprice">
+                    Delivery price: <strong id="shippingprice">500 DA</strong>
+                </div>
+
+                <div class="total">
+                    Total price: <strong id="total">0 DA</strong>
+                </div>
+
+                <button type="submit" class="sbm">CONFIRM YOUR ORDER</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

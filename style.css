@@ -1,0 +1,196 @@
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #670626;
+}
+
+.line {
+    background-color: #670626;
+    height: 4px;
+    border: none;
+    margin: 10px 0;
+}
+
+.para1 {
+    font-weight: bold;
+    font-size: 16px;
+    color: #670626;
+    text-decoration: underline;
+    text-align: center;
+}
+
+/* أزرار الأقسام */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.cat-btn {
+    background-color: #fbc7d2;
+    border: 1px solid #670626;
+    color: #670626;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cat-btn.active,
+.cat-btn:hover {
+    background-color: #670626;
+    color: white;
+}
+
+/* شبكة المنتجات: 2 منتجات في كل سطر للهواتف */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #670626;
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+}
+
+.product-card img {
+    width: 100%;
+    height: 490px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.prod-info h3 {
+    font-size: 14px;
+    color: #670626;
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: bold;
+    color: #670626;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.btn {
+    background-color: #670626;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Modal (نافذة الطلب المنبثقة) */
+.modal {
+
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 2px solid #670626;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #670626;
+    cursor: pointer;
+}
+
+.pro-img {
+    width: 120px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 5px;
+    border: 1px solid #670626;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #670626;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #670626;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.delprice,
+.total {
+    font-size: 15px;
+    font-weight: bold;
+    color: #670626;
+    margin-top: 6px;
+}
+
+.sbm {
+    background-color: #fbc7d2;
+    border: 1px solid #670626;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 12px;
+    font-weight: bold;
+    color: #670626;
+    cursor: pointer;
+}
+
+.sbm:hover {
+    background-color: #670626;
+    color: white;
+}
